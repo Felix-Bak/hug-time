@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FF6B6B;
+  --color-primary-dark: #E85555;
+  --color-primary-light: #FF9E9E;
+  --color-secondary: #FFB6C1;
+  --color-background: #F0F0F5;
+  --color-background-warm: #F8F4F0;
+  --color-accent: #FFD54F;
+  --color-text: #1D1D1F;
+  --color-text-secondary: #6E6E73;
+  --color-text-tertiary: #AEAEB2;
+  --color-safe: #34C759;
+  --color-safe-dark: #28A745;
+  --color-safe-bg: #E8F8EC;
+  --color-caution: #FF9F0A;
+  --color-caution-bg: #FFF3E0;
+  --color-danger: #FF3B30;
+  --color-glass: rgba(255, 255, 255, 0.72);
+  --color-glass-border: rgba(255, 255, 255, 0.5);
+  --color-glass-heavy: rgba(255, 255, 255, 0.85);
+  --color-glass-subtle: rgba(255, 255, 255, 0.45);
+  --color-divider: rgba(60, 60, 67, 0.08);
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
+    'Pretendard Variable', Pretendard, system-ui, 'Apple SD Gothic Neo',
+    'Noto Sans KR', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(160deg, #E8E0F0 0%, #F0E8E0 25%, #E0ECF0 50%, #F0E8EC 75%, #E8ECF0 100%);
+  background-attachment: fixed;
+  color: var(--color-text);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glass card base */
+.glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid var(--color-glass-border);
+  box-shadow:
+    0 2px 16px rgba(0, 0, 0, 0.04),
+    0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.glass-heavy {
+  background: var(--color-glass-heavy);
+  backdrop-filter: blur(60px) saturate(200%);
+  -webkit-backdrop-filter: blur(60px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.glass-subtle {
+  background: var(--color-glass-subtle);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Smooth input focus */
+input, select {
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+  box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.15);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+}
